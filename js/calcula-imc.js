@@ -11,7 +11,7 @@ for(var i=0 ; i < paciente.length; i++){
 	peso = paciente[i].querySelector(".info-peso").textContent;
 	altura = paciente[i].querySelector(".info-altura").textContent;
 
-	//Tratamento de Erro	
+	//Tratamento de Erro - peso
 	if(peso < 0 || peso > 200){
 		alert("peso invalido");
 		controle = false;
@@ -19,6 +19,7 @@ for(var i=0 ; i < paciente.length; i++){
 		paciente[i].classList.add("paciente-invalido");
 	}
 
+	//Tratamento de Erro - altura
 	if(altura < 0 || altura > 2.5){
 		alert("altura invalida");
 		controle = false;
@@ -27,11 +28,14 @@ for(var i=0 ; i < paciente.length; i++){
 	}
 
 	if(controle){
-		var imc = peso / (altura*altura);
-		paciente[i].querySelector(".info-imc").textContent = imc.toFixed(2);
+		var imc = calculaImc(peso, altura);
+		paciente[i].querySelector(".info-imc").textContent = imc;
 	}
 }
 
 
-
-
+// Calcula de IMC
+function calculaImc(peso, alura){
+	var imc = peso / (altura*altura);
+	return imc.toFixed(2);
+}
