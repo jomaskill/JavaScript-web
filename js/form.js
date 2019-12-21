@@ -18,11 +18,15 @@ function adicionar(event){
 	//Criando Td e Tr
 	var pacientTr = montaTr(paciente);
 
-	//Adicionando valores na tabela
-	var tabela = document.querySelector("#tabela-pacientes");
-	
-	tabela.appendChild(pacientTr);
-	form.reset();
+	//Validando novo paciente
+	if(!validaPaciente(paciente)){
+		console.log("paciente inválido");
+	}else{
+		//Adicionando valores na tabela
+		var tabela = document.querySelector("#tabela-pacientes");
+		tabela.appendChild(pacientTr);
+		form.reset();
+	}
 }
 
 function coletaDadosPaciente(form){
@@ -63,4 +67,12 @@ function montaTd(dado, classe){
 	td.textContent = classe;
 
 	return td;
+}
+
+function validaPaciente(paciente){
+
+	if (validaPeso(paciente.peso) && validaAltura(paciente.altura)){
+		return true;
+	}
+	return false;
 }
