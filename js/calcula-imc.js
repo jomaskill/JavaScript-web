@@ -33,22 +33,20 @@ for(var i=0 ; i < paciente.length; i++){
 
 
 function validaPeso(peso){
-	var controle = true;
 	if(peso < 0 || peso > 200){
 		alert("peso invalido");
-		controle = false;
+		return false;
 	}
-	return controle;
+	return true;
 }
 
 function validaAltura(altura){
-	var controle = true;
 	if(altura < 0 || altura > 2.5){
 		alert("altura invalida");
-		controle = false;
+		return false;
 
 	}
-	return controle;
+	return true;
 }
 // Calcula de IMC
 function calculaImc(peso, alura){
