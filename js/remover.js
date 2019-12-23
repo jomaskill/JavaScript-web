@@ -15,6 +15,8 @@ function removerPaciente(){
 		var paiDoAlvo = alvoEvento.parentNode; // TR = paciente = remover 
 		paiDoAlvo.remove();
 		*/
+
+		//Função que coloca um timer para fazer uma ação em Ms.
 		setTimeout(function() {
         	event.target.parentNode.remove(); // função que remove a TR
     	}, 500);

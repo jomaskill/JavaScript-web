@@ -3,7 +3,6 @@
  //vetor que pega tudo da classe
 var paciente = document.querySelectorAll(".paciente");
 
-console.log(paciente.classList);
 
 for(var i=0 ; i < paciente.length; i++){
 
@@ -41,7 +40,7 @@ function validaPeso(peso){
 }
 
 function validaAltura(altura){
-	if(altura < 0 || altura > 2.5){
+	if(altura < 0 || altura > 3){
 		alert("altura invalida");
 		return false;
 
