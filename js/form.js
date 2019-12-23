@@ -20,13 +20,21 @@ function adicionar(event){
 
 	//Validando novo paciente
 	if(!validaPaciente(paciente)){
-		console.log("paciente inválido");
+		alert("paciente inválido");
 	}else{
 		//Adicionando valores na tabela
 		var tabela = document.querySelector("#tabela-pacientes");
 		tabela.appendChild(pacientTr);
 		form.reset();
 	}
+}
+
+function adicionaPacienteNaTabela(paciente){
+
+	//Criando Td e Tr
+	var pacientTr = montaTr(paciente);
+	var tabela = document.querySelector("#tabela-pacientes");
+	tabela.appendChild(pacientTr);
 }
 
 function coletaDadosPaciente(form){
